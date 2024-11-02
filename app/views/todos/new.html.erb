@@ -1,20 +1,17 @@
-
 <%= turbo_frame_tag "modal" do %>
-<% if params[:show_modal] %>
-<% content_for :title, "New todo" %>
-<div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-<section class="relative max-w-md w-full mx-auto bg-zinc-50 py-8 px-4 border border-gray-200 rounded-md shadow-sm" >
-    
-    <div class="flex justify-between items-center mb-4">
-      <%= link_to "< Back", "", class: "rounded-lg px-3 py-2 border border-transparent hover:border-orange-600 text-orange-600 w-fit", data: { turbo_frame: "_top" } %>
-      <%# <%= link_to "< Back", todos_path, class: "rounded-lg px-3 py-2 border border-transparent hover:border-orange-600 text-orange-600 w-fit", data: { turbo_frame: "_top" } %>
-      <h1 class="text-2xl font-bold text-orange-600">New Todo</h1>
-      <div class="w-[78.13px]"></div>
-    </div>
-
-  <section class="ml-4">
-    <%= render "form", todo: @todo %>
-  </section>
-</section>
-<% end %>
+  <% content_for :title, "New todo" %>
+  <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+    <section class="relative max-w-md w-full mx-auto bg-zinc-50 py-8 px-4 border border-gray-200 rounded-md shadow-sm" >        
+      <div class="flex justify-between items-center mb-4">
+        <%= link_to "< Back", "", class: "rounded-lg px-3 py-2 border border-transparent hover:border-orange-600 text-orange-600 w-fit", data: { turbo_frame: "_top" } %>
+        <%# <%= link_to "< Back", todos_path, class: "rounded-lg px-3 py-2 border border-transparent hover:border-orange-600 text-orange-600 w-fit", data: { turbo_frame: "_top" } %>
+        <h1 class="text-2xl font-bold text-orange-600">New Todo</h1>
+        <div class="w-[78.13px]"></div>
+      </div>
+        
+      <section class="ml-4">
+        <%= render "form", todo: @todo %>
+      </section
+    </section>
+  </div>
 <% end %>
