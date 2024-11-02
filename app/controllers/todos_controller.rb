@@ -13,6 +13,10 @@ class TodosController < ApplicationController
   # GET /todos/new
   def new
     @todo = Todo.new
+    respond_to do |format|
+      format.html # for standard requests
+      format.turbo_stream { render partial: "todos/form_modal", locals: { todo: @todo } }
+    end
   end
 
   # GET /todos/1/edit
