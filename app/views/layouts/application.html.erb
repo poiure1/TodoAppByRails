@@ -16,12 +16,13 @@
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    <%= turbo_frame_tag "modal" %>
   </head>
 
   <body>
     <main class="container mx-auto mt-12 px-5 flex flex-col">
       <%= yield %>
+      <turbo-frame id="modal">
+      </turbo-frame>
     </main>
   </body>
 </html>
